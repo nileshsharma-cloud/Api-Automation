@@ -1,0 +1,15 @@
+package apitesting;
+
+import static io.restassured.RestAssured.*;
+
+/*io.restassured.matcher.RestAssuredMatchers.*
+org.hamcrest.Matchers.**/
+
+public class SendGetRequestUsingRestAssured {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

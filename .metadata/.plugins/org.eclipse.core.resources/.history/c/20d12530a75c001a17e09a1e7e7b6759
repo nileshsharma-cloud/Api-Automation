@@ -1,0 +1,23 @@
+ package com.w2a.ApiTestingFramework.setup;
+
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
+
+import io.restassured.RestAssured;
+
+public class BaseTest {
+
+	@BeforeSuite
+	public void setup() {
+		
+		
+		RestAssured.baseURI = "https://api.stripe.com";
+		RestAssured.basePath = "/v1";
+	}
+	
+	
+	@AfterSuite
+	public void teardown() {
+		
+	}
+}

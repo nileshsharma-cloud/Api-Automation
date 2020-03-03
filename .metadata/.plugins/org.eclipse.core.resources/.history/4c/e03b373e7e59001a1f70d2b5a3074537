@@ -1,0 +1,20 @@
+package apitesting;
+
+import static io.restassured.RestAssured.given;
+
+import static io.restassured.response.Response;
+
+public class SendPostRequestUsingRestAssured {
+
+	
+	public static void main(String[] args) {
+	
+		Response response = given()
+				//	.params("limit",3)
+					.auth()
+					.basic("sk_test_4ntAgFgOUA3aBcy2sLeCFD9700W2SGvlAb", "")
+		
+		
+	}
+	
+}

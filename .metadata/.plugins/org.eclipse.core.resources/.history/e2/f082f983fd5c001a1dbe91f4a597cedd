@@ -1,0 +1,19 @@
+package inheritanceExamples;
+
+public class StringExample {
+
+	//.equals() always checks content of the string
+	// == ()double equal operator always checks reference.This means if two references pointing to same object.
+	
+	public static void main(String[] args) {
+		
+		String s = "nilesh";
+		String s1 = new String("nilesh");
+		String s2 = s1;
+		
+		System.out.println(s.equals(s1));
+		System.out.println(s==s1);
+		
+		System.out.println(s1==s2);
+	}
+}

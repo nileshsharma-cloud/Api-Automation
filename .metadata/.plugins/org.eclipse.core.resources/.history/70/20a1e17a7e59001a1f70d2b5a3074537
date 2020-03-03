@@ -1,0 +1,22 @@
+package apitesting;
+
+import static io.restassured.RestAssured.given;
+
+import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
+
+public class SendPostRequestUsingRestAssured {
+
+	
+	public static void main(String[] args) {
+	
+		Response response = given()
+				//	.params("limit",3)
+					.auth()
+					.basic("sk_test_4ntAgFgOUA3aBcy2sLeCFD9700W2SGvlAb", "").formParam("description", "This is way2Automation")
+					.formParam("email", "testing@getnada.com").post("https://api.stripe.com/v1/customers");
+		
+		
+	}
+	
+}

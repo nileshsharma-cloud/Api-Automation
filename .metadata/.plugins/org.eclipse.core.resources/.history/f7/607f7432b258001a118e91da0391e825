@@ -1,0 +1,18 @@
+package test;
+
+import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.Logger;
+
+public class TestLog4J {
+
+	static Logger log = Logger.getLogger(TestLog4J.class);
+	
+	public static void main(String[] args) {
+
+		BasicConfigurator.configure("Log4jConfiguration.xml");
+		log.debug("this is debug log");
+		log.info("this is info log");
+		log.error("there is some error in our project.");
+	}
+
+}

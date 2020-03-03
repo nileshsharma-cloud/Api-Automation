@@ -1,0 +1,29 @@
+package com.w2a.apitestcases;
+
+import org.testng.annotations.Test;
+
+import io.restassured.RestAssured;
+import io.restassured.response.Response;
+
+import static io.restassured.RestAssured.*;
+
+public class CreateCustomerTest {
+
+	
+	@Test
+	public void validateCreateTestWithValidApiSecretKey() {
+		
+		
+		RestAssured.baseURI = "https://api.stripe.com";
+		RestAssured.basePath = "/v1";
+		Response response = given().auth().basic("sk_test_4ntAgFgOUA3aBcy2sLeCFD9700W2SGvlAb","")
+			.formParam("name","Nilesh Sharma")
+			.formParam("description", "Api Automation Engineer")
+			.formParam("email","testing4@getnada.com")
+			.post("/customers");
+			
+		response.prettyPrint();
+		System.out.println("Status code "+response.getStatusCode());
+		
+	}
+}

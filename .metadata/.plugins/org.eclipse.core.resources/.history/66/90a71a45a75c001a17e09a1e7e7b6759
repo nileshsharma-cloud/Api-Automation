@@ -1,0 +1,35 @@
+ package com.w2a.ApiTestingFramework.setup;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
+
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
+
+import io.restassured.RestAssured;
+
+public class BaseTest {
+
+	public void start() throws IOException {
+		Properties prop = new Properties();
+		
+		FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"\\test\\resources\\properties\\config.properties");
+		
+		prop.load(fis);
+	}
+	@BeforeSuite
+	public void setup() {
+		
+		
+		RestAssured.baseURI = "https://api.stripe.com";
+		RestAssured.basePath = "/v1";
+	}
+	
+	
+	@AfterSuite
+	public void teardown() {
+		
+	}
+}
